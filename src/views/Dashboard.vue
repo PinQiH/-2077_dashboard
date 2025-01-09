@@ -195,7 +195,7 @@ onMounted(() => {
             </router-link>
           </div>
           <div class="col-lg-3 col-md-6 col-12">
-            <router-link to="/billings">
+            <router-link to="/billing">
               <argon-badge :variant="'gradient'" :color="'warning'"
                 >Billings收支列表</argon-badge
               >
