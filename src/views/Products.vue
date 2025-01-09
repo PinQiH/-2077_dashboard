@@ -149,7 +149,7 @@ export default {
     fetchProducts() {
       // 這裡的 URL 換成你自己的後端 API 位址
       axios
-        .get("https://2077-backend.onrender.com/api/v1/admin/products", {
+        .get(`${process.env.VUE_APP_BASE_URL}/api/v1/admin/products`, {
           params: {
             page: this.pagination.page,
             size: this.pagination.perPage,

@@ -17,7 +17,7 @@ const chartLabels = ref([])
 const fetchProfit = async () => {
   try {
     const response = await axios.get(
-      "https://2077-backend.onrender.com/api/v1/admin/wallet/profit"
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/wallet/profit`
     )
     if (response.data.rtnCode === "0000") {
       totalProfit.value = response.data.data.profit
@@ -33,7 +33,7 @@ const fetchProfit = async () => {
 const fetchCustomer = async () => {
   try {
     const response = await axios.get(
-      "https://2077-backend.onrender.com/api/v1/admin/reports/customers"
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/reports/customers`
     )
     if (response.data.rtnCode === "0000") {
       totalCustomers.value = response.data.data.totalCustomers
@@ -49,7 +49,7 @@ const fetchCustomer = async () => {
 const fetchRevenue = async () => {
   try {
     const response = await axios.get(
-      "https://2077-backend.onrender.com/api/v1/admin/reports/revenue"
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/reports/revenue`
     )
     if (response.data.rtnCode === "0000") {
       totalRevenue.value = response.data.data.totalRevenue
@@ -65,7 +65,7 @@ const fetchRevenue = async () => {
 const fetchThreshold = async () => {
   try {
     const response = await axios.get(
-      "https://2077-backend.onrender.com/api/v1/admin/reports/threshold"
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/reports/threshold`
     )
     if (response.data.rtnCode === "0000") {
       threshold.value = response.data.data.threshold
@@ -80,7 +80,7 @@ const fetchThreshold = async () => {
 const fetchOrderReport = async () => {
   try {
     const response = await axios.get(
-      "https://2077-backend.onrender.com/api/v1/admin/reports/orders",
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/reports/orders`,
       {
         params: { year: new Date().getFullYear() },
       }

@@ -14,7 +14,7 @@ const toggleTextColor = () => {
 const fetchProducts = async () => {
   try {
     const response = await axios.get(
-      "https://2077-backend.onrender.com/api/v1/admin/products"
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/products`
     )
 
     if (response.data.rtnCode === "0000") {

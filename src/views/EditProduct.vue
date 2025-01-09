@@ -23,7 +23,7 @@ const fetchProductDetails = async () => {
   try {
     const productId = route.params.productId // 獲取 URL 中的 productId
     const response = await axios.get(
-      `https://2077-backend.onrender.com/api/v1/admin/products/${productId}`
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/products/${productId}`
     )
 
     if (response.data.rtnCode === "0000") {
@@ -64,7 +64,7 @@ const saveProductDetails = async () => {
     }
 
     const response = await axios.put(
-      `https://2077-backend.onrender.com/api/v1/admin/products/${productId}`,
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/products/${productId}`,
       updateData
     )
 

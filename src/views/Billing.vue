@@ -34,7 +34,7 @@ const newTransaction = ref({
 const fetchTransactions = async () => {
   try {
     const response = await axios.get(
-      "https://2077-backend.onrender.com/api/v1/admin/wallet",
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/wallet`,
       {
         params: {
           page: pagination.value.page,
@@ -57,7 +57,7 @@ const fetchTransactions = async () => {
 const fetchProfit = async () => {
   try {
     const response = await axios.get(
-      "https://2077-backend.onrender.com/api/v1/admin/wallet/profit"
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/wallet/profit`
     )
     if (response.data.rtnCode === "0000") {
       totalProfit.value = response.data.data.profit
@@ -73,7 +73,7 @@ const fetchProfit = async () => {
 const addTransaction = async () => {
   try {
     const response = await axios.post(
-      "https://2077-backend.onrender.com/api/v1/admin/wallet",
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/wallet`,
       newTransaction.value
     )
     if (response.data.rtnCode === "0000") {
@@ -92,7 +92,7 @@ const addTransaction = async () => {
 const deleteTransaction = async (transactionId) => {
   try {
     const response = await axios.delete(
-      `https://2077-backend.onrender.com/api/v1/admin/wallet/${transactionId}`
+      `${process.env.VUE_APP_BASE_URL}/api/v1/admin/wallet/${transactionId}`
     )
     if (response.data.rtnCode === "0000") {
       // 刪除成功後重新加載交易記錄和總利潤
