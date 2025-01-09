@@ -5,6 +5,7 @@ import axios from "axios"
 import MiniStatisticsCard from "@/examples/Cards/MiniStatisticsCard.vue"
 import GradientLineChart from "@/examples/Charts/GradientLineChart.vue"
 import Carousel from "./Carousel.vue"
+import ArgonBadge from "@/components/ArgonBadge.vue"
 
 const totalProfit = ref(0)
 const totalCustomers = ref(0)
@@ -177,6 +178,32 @@ onMounted(() => {
             />
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-12">
+            <router-link to="/products">
+              <argon-badge :variant="'gradient'" :color="'primary'"
+                >Products商品列表</argon-badge
+              >
+            </router-link>
+          </div>
+          <div class="col-lg-3 col-md-6 col-12">
+            <router-link to="/orders">
+              <argon-badge :variant="'gradient'" :color="'info'"
+                >Orders訂單列表</argon-badge
+              >
+            </router-link>
+          </div>
+          <div class="col-lg-3 col-md-6 col-12">
+            <router-link to="/billings">
+              <argon-badge :variant="'gradient'" :color="'warning'"
+                >Billings收支列表</argon-badge
+              >
+            </router-link>
+          </div>
+        </div>
+
+        <div class="row"><br /></div>
 
         <div class="row">
           <div class="col-lg-7 mb-lg">
